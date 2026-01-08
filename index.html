@@ -54,11 +54,17 @@
       padding: 120px 20px 100px 20px;
       position: relative;
     }
-    header img {
+    header .logo {
       max-width: 180px;
       margin-bottom: 20px;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+      transition: transform 0.3s, filter 0.3s;
+    }
+    header .logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
     }
     header h1 {
       font-size: 3rem;
@@ -180,6 +186,17 @@
         align-items: center;
       }
     }
+    @media (max-width: 600px) {
+      header .logo {
+        max-width: 140px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -197,7 +214,7 @@
 
 <!-- HERO HEADER -->
 <header>
-  <img src="logo-dark.svg" alt="Markos Bio Logo">
+  <img src="MarkosBioLogo.png" alt="Markos Bio Logo" class="logo">
   <h1>Markos Bio</h1>
   <p>Building sustainable biotechnological solutions across health, environment, and innovation in Africa.</p>
 </header>
